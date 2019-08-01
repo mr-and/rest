@@ -4,6 +4,7 @@
 <head>
         <title>Add</title>
 </head>
+<h1>Add doc</h1>
 <body>
 
 <form action="${var}" method="POST">

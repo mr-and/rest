@@ -8,7 +8,6 @@
 <body>
 
 
-
 <form action="${var}" method="POST">
 
     <input type="text" name="number" id="number">
