@@ -1,0 +1,9 @@
+testproject\restApp\config\HibernateConfig.class
+testproject\restApp\config\WebConfig.class
+testproject\restApp\config\AppInit.class
+testproject\restApp\dao\DocsDAO.class
+testproject\restApp\service\DocsService.class
+testproject\restApp\service\DocsServiceImpl.class
+testproject\restApp\controller\DocsController.class
+testproject\restApp\dao\DocsDAOImpl.class
+testproject\restApp\model\Docs.class
