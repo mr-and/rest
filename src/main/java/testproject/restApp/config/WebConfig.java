@@ -21,4 +21,6 @@ public class WebConfig {
         viewResolver.setViewClass(JstlView.class);
         return viewResolver;
     }
+
+
 }

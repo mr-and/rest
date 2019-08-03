@@ -5,7 +5,7 @@
     <title>Docs</title>
 </head>
 <body>
-<h2>Docs list</h2>
+<h1>Docs list</h1>
 <table>
     <tr>
         <th>id</th>
