@@ -5,5 +5,7 @@ testproject\restApp\dao\DocsDAO.class
 testproject\restApp\service\DocsService.class
 testproject\restApp\service\DocsServiceImpl.class
 testproject\restApp\controller\DocsController.class
+testproject\restApp\config\SecurityConfiguration.class
 testproject\restApp\dao\DocsDAOImpl.class
 testproject\restApp\model\Docs.class
+testproject\restApp\config\SecurityInit.class

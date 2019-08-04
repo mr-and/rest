@@ -1,5 +1,7 @@
 package testproject.restApp.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +25,9 @@ import java.util.List;
 public class DocsController {
     private DocsService docsService;
 
+    private static final Logger logger =
+            LoggerFactory.getLogger(DocsController.class);
+
     @Autowired
     public void setDocsService(DocsService docsService) {
         this.docsService = docsService;
@@ -30,6 +35,10 @@ public class DocsController {
 
     @RequestMapping(value = "/doclist", method = RequestMethod.GET)
     public ModelAndView allDocs(){
+        logger.debug("debug ");
+        logger.error("error");
+        logger.info("info");
+
         List<Docs> docs = docsService.allDocs();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("doclist");
@@ -39,6 +48,9 @@ public class DocsController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView root(){
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("greetings");
         return modelAndView;
@@ -47,6 +59,9 @@ public class DocsController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
         return modelAndView;
@@ -54,6 +69,9 @@ public class DocsController {
 
     @RequestMapping(value = "/adddoc", method = RequestMethod.GET)
      public ModelAndView addDocPage(){
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("adddoc");
         return modelAndView;
@@ -61,6 +79,9 @@ public class DocsController {
 
     @RequestMapping(value = "/adddoc", method = RequestMethod.POST)
     public ModelAndView addDoc(@ModelAttribute("doc") Docs docs) {
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/doclist");
         docsService.add(docs);
@@ -69,6 +90,9 @@ public class DocsController {
 
     @RequestMapping(value = "/deldoc", method = RequestMethod.GET)
     public ModelAndView delDocPage() {
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("deldoc");
         return modelAndView;
@@ -76,6 +100,9 @@ public class DocsController {
 
     @RequestMapping(value = "/deldoc", method = RequestMethod.POST)
     public ModelAndView delDoc(@ModelAttribute("number") int number) {
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         List<Docs> docs = docsService.allDocs();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/doclist");
@@ -90,6 +117,9 @@ public class DocsController {
 
     @RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);
@@ -99,6 +129,9 @@ public class DocsController {
 
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
+        logger.debug("debug");
+        logger.error("error");
+        logger.info("info");
         model.addAttribute("user", getPrincipal());
         return "accessDenied";
     }
