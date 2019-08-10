@@ -24,7 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/deldoc/**").access("hasRole('ADMIN')")
                 .antMatchers("/adddoc/**").access("hasRole('USER')")
-                .antMatchers("/doclist/**").access("hasRole('ADMIN')" )
+                .antMatchers("/doclist/**").access("hasRole('ADMIN') or hasRole('USER')" )
                 .and().formLogin()
                 .and().exceptionHandling().accessDeniedPage("/Access_Denied");
 
