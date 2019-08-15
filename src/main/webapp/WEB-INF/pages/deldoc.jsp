@@ -4,7 +4,7 @@
 <head>
     <title>Delete</title>
 </head>
-<h1>Delete doc</h1>
+<h1>Удалить документ по номеру</h1>
 <body>
 
 
@@ -13,11 +13,11 @@
     <input type="text" name="number" id="number">
 
     <c:if test="${empty del.number}">
-        <input type="submit" value="Delete doc">
+        <input type="submit" value="Введите номер">
     </c:if>
 
 </form>
-
-
 </body>
+
+<a href="/">На главную</a>
 </html>

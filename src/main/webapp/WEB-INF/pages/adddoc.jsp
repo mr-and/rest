@@ -4,24 +4,25 @@
 <head>
         <title>Add</title>
 </head>
-<h1>Add doc</h1>
+<h1>Добавить документ</h1>
 <body>
 
 <form action="${var}" method="POST">
     <c:if test="${!empty doc}">
         <input type="hidden" name="id" value="${doc.id}">
     </c:if>
-    <label for="data">Data</label>
+    <label for="data">Дата</label>
     <input type="text" name="data" id="data">
-    <label for="number">Number</label>
+    <label for="number">Номер</label>
     <input type="text" name="number" id="number">
-    <label for="sum">Sum</label>
+    <label for="sum">Сумма</label>
     <input type="text" name="sum" id="sum">
 
     <c:if test="${empty doc}">
-        <input type="submit" value="Add new doc">
+        <input type="submit" value="Создать новый документ">
     </c:if>
-
 </form>
 </body>
+
+<a href="/">На главную</a>
 </html>

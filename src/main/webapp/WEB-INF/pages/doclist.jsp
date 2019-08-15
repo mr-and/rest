@@ -5,13 +5,13 @@
     <title>Docs</title>
 </head>
 <body>
-<h1>Docs list</h1>
+<h1>Список документов</h1>
 <table>
     <tr>
-        <th>id</th>
-        <th>data</th>
-        <th>number</th>
-        <th>sum</th>
+        <th>Id</th>
+        <th>Дата</th>
+        <th>Номер</th>
+        <th>Сумма</th>
     </tr>
     <c:forEach var="doc" items="${docsList}">
     <tr>
@@ -21,5 +21,10 @@
         <td>${doc.sum}</td>
     </tr>
     </c:forEach>
+
+
+</table>
 </body>
+
+<a href="/">На главную</a>
 </html>

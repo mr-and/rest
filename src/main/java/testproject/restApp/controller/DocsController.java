@@ -36,6 +36,7 @@ public class DocsController {
     @RequestMapping(value = "/doclist", method = RequestMethod.GET)
     public ModelAndView allDocs(){
         logger.info("info");
+        logger.error("error");
         List<Docs> docs = docsService.allDocs();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("doclist");
@@ -46,6 +47,7 @@ public class DocsController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView root(){
         logger.info("info");
+        logger.error("error");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("greetings");
         return modelAndView;
@@ -55,6 +57,7 @@ public class DocsController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
         logger.info("info");
+        logger.error("error");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("login");
         return modelAndView;
@@ -63,6 +66,7 @@ public class DocsController {
     @RequestMapping(value = "/adddoc", method = RequestMethod.GET)
      public ModelAndView addDocPage(){
         logger.info("info");
+        logger.error("error");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("adddoc");
         return modelAndView;
@@ -71,6 +75,7 @@ public class DocsController {
     @RequestMapping(value = "/adddoc", method = RequestMethod.POST)
     public ModelAndView addDoc(@ModelAttribute("doc") Docs docs) {
         logger.info("info");
+        logger.error("error");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/doclist");
         docsService.add(docs);
@@ -80,6 +85,7 @@ public class DocsController {
     @RequestMapping(value = "/deldoc", method = RequestMethod.GET)
     public ModelAndView delDocPage() {
         logger.info("info");
+        logger.error("error");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("deldoc");
         return modelAndView;
@@ -88,6 +94,7 @@ public class DocsController {
     @RequestMapping(value = "/deldoc", method = RequestMethod.POST)
     public ModelAndView delDoc(@ModelAttribute("number") int number) {
         logger.info("info");
+        logger.error("error");
         List<Docs> docs = docsService.allDocs();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/doclist");
@@ -103,6 +110,7 @@ public class DocsController {
     @RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
         logger.info("info");
+        logger.error("error");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);
@@ -113,6 +121,7 @@ public class DocsController {
     @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(ModelMap model) {
         logger.info("info");
+        logger.error("error");
         model.addAttribute("user", getPrincipal());
         return "accessDenied";
     }

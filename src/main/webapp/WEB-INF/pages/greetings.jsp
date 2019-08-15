@@ -2,17 +2,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Документооборот</title>
 </head>
-<body>
-     <a href="/adddoc">Adddoc</a>
-     <t> </t>
-     <a href="/doclist">Doclist</a>
-     <t> </t>
-     <a href="/deldoc">Deldoc</a>
-     <t> </t>
-     <a href="/login">Login</a>
-
-     <a href="<c:url value="/logout" />">Logout</a>
+     <a href="/adddoc">Добавить пользователя</a>
+     <br>
+     <a href="/doclist">Список документов</a>
+     <br>
+     <a href="/deldoc">Удалить документ</a>
+     <br>
+     <br>
+     <a href="/login">Авторизация</a>
+     <br>
+     <a href="<c:url value="/logout" />">Выйти</a>
 </body>
 </html>
